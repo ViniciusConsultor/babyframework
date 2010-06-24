@@ -1,3 +1,58 @@
+<<<<<<< .mine
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Comm", "Baby.Framework.Comm\Baby.Framework.Comm.csproj", "{A2A4959F-F6E8-45E7-AB32-5D81E5E18578}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Baby.Framework.WebSite", "Baby.Framework.WebSite", "{72C161F8-7CCC-497C-9F3D-9D297E560A10}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/Baby.Framework.WebSite"
+		Debug.AspNetCompiler.PhysicalPath = "Baby.Framework.WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Baby.Framework.WebSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Baby.Framework.WebSite"
+		Release.AspNetCompiler.PhysicalPath = "Baby.Framework.WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Baby.Framework.WebSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6157"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Util", "Baby.Framework.Util\Baby.Framework.Util.csproj", "{4E4B0B47-9000-4940-BCC6-3811DD0EF215}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2A4959F-F6E8-45E7-AB32-5D81E5E18578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A4959F-F6E8-45E7-AB32-5D81E5E18578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A4959F-F6E8-45E7-AB32-5D81E5E18578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A4959F-F6E8-45E7-AB32-5D81E5E18578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C161F8-7CCC-497C-9F3D-9D297E560A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C161F8-7CCC-497C-9F3D-9D297E560A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C161F8-7CCC-497C-9F3D-9D297E560A10}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C161F8-7CCC-497C-9F3D-9D297E560A10}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4E4B0B47-9000-4940-BCC6-3811DD0EF215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4B0B47-9000-4940-BCC6-3811DD0EF215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4B0B47-9000-4940-BCC6-3811DD0EF215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4B0B47-9000-4940-BCC6-3811DD0EF215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
+=======
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
@@ -18,3 +73,4 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+>>>>>>> .r3
