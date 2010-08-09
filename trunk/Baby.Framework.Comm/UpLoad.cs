@@ -83,22 +83,23 @@ namespace Baby.Framework.Comm
         /// 上传文件并返回路径
         /// </summary>
         /// <param name="fileUpload">上传文件控件</param>
+        /// <param name="allowFileStr">允许文件名 如： .jpg|.JPG|.gif|.GIF|.doc|.DOC</param>
+        /// <param name="savePathStr">保存文件夹 如： ~\attachment\</param>
         /// <returns>成功返回路径，LengthErr文件超过1M，ExtErr文件不属于限制文件,string.Empty无文件</returns>
-        public static string UpFile(FileUpload fileUpload)
+        public static string UpFile(FileUpload fileUpload,string allowFileStr,string savePathStr)
         {
             if (fileUpload.HasFile)
             {
                 string sfileExt = Path.GetExtension(fileUpload.FileName);
-                string sallowfile = ".jpg|.JPG|.gif|.GIF|.doc|.DOC";
                 string sdate = DateTime.Now.ToString("yyyyMMddhhmmss");
-                string savePath = System.Web.HttpContext.Current.Server.MapPath(@"~\attachment\" + sdate + sfileExt);
+                string savePath = System.Web.HttpContext.Current.Server.MapPath(savePathStr + sdate + sfileExt);
                 float ffilelength = fileUpload.PostedFile.ContentLength / 1000;
-                if (sallowfile.Contains(sfileExt) == true)
+                if (allowFileStr.Contains(sfileExt) == true)
                 {
                     if (ffilelength <= 1024)
                     {
                         fileUpload.SaveAs(savePath);
-                        return "/attachment/" + sdate + sfileExt;
+                        return savePathStr.Replace('\\','/').Replace("~",string.Empty) + sdate + sfileExt;
                     }
                     else
                     {
