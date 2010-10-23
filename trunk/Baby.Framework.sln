@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Comm", "Baby
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Baby.Framework.WebSite", "Baby.Framework.WebSite", "{72C161F8-7CCC-497C-9F3D-9D297E560A10}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/Baby.Framework.WebSite"
 		Debug.AspNetCompiler.PhysicalPath = "Baby.Framework.WebSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Baby.Framework.WebSite\"
@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Util", "Baby
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.DALProfile", "Baby.Framework.DALProfile\Baby.Framework.DALProfile.csproj", "{133B1530-FD86-470E-B565-3123A3335E1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Office", "Baby.Framework.Office\Baby.Framework.Office.csproj", "{772C26AE-095B-4047-962E-B9314D2757A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{133B1530-FD86-470E-B565-3123A3335E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{133B1530-FD86-470E-B565-3123A3335E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{133B1530-FD86-470E-B565-3123A3335E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772C26AE-095B-4047-962E-B9314D2757A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772C26AE-095B-4047-962E-B9314D2757A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772C26AE-095B-4047-962E-B9314D2757A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772C26AE-095B-4047-962E-B9314D2757A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
