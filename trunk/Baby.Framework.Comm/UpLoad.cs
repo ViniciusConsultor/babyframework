@@ -64,7 +64,7 @@ namespace Baby.Framework.Comm
                 }
 
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
