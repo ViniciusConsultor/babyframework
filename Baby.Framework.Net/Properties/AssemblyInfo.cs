@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Baby.Framework.Comm")]
-[assembly: AssemblyDescription("超级奶崽公共工具集")]
+[assembly: AssemblyTitle("Baby.Framework.Net")]
+[assembly: AssemblyDescription("超级奶崽网络工具集")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BabySuper")]
-[assembly: AssemblyProduct("Baby.Framework.Comm")]
+[assembly: AssemblyProduct("Baby.Framework.Net")]
 [assembly: AssemblyCopyright("Copyright © BabySuper 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("370724c5-bcc2-4e0e-8413-e70aa6d4eab6")]
+[assembly: Guid("7cfae280-23e8-4721-91f6-17ad8c729f92")]
 
 // 程序集的版本信息由下面四个值组成:
 //

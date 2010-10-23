@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Baby.Framework.Office")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("超级奶崽office工具集")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BabySuper")]
 [assembly: AssemblyProduct("Baby.Framework.Office")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
+[assembly: AssemblyCopyright("Copyright © BabySuper 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
