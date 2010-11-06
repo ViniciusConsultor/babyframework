@@ -522,9 +522,8 @@ namespace Baby.Framework.Office
             {
                 File.Copy(tempFilePath, savePath, true);
             }
-            catch (Exception)
+            catch
             {
-                
                 throw;
             }
             string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=True;Data Source=" + savePath + ";Extended Properties=Excel 8.0;";
@@ -539,7 +538,7 @@ namespace Baby.Framework.Office
                 StringBuilder sbInsertSql = new StringBuilder();
                 string insertColumn = string.Empty;
                 string insertParam = string.Empty;
-                sbTable.Append("create table [" + fileName + "] (");
+                sbTable.Append("Create Table [Sheet1$](");
 
                 int i = 0;
                 foreach (DataColumn dc in dt.Columns)
@@ -558,8 +557,10 @@ namespace Baby.Framework.Office
                     }
                 }
                 sbTable.Append(")");
-                sbInsertSql.Append("INSERT INTO [" + fileName + "$] (" + insertColumn + ") values(" + insertParam + ")");
+                sbInsertSql.Append("INSERT INTO [Sheet1$] (" + insertColumn + ") values(" + insertParam + ")");
 
+                cmd = new OleDbCommand("Drop Table [Sheet1$]", conn);
+                cmd.ExecuteNonQuery();
                 cmd = new OleDbCommand(sbTable.ToString(), conn);
                 cmd.ExecuteNonQuery();
 
