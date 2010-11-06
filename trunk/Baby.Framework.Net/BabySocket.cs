@@ -9,6 +9,10 @@ namespace Baby.Framework.Net
 {
     public class BabySocket
     {
+        /// <summary>
+        /// 监听方法 直接调用即可开始监听端口
+        /// </summary>
+        /// <param name="port">端口</param>
         public static void Listen(int port)
         {
             //准备监听端口
@@ -55,6 +59,10 @@ namespace Baby.Framework.Net
             }
         }
 
+        /// <summary>
+        /// 监听失败重新提供端口监听
+        /// </summary>
+        /// <param name="listener">监听连接</param>
         public static void ReListen(TcpListener listener)
         {
             if (listener != null)
