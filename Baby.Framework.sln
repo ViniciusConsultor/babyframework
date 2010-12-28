@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Office", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby.Framework.Net", "Baby.Framework.Net\Baby.Framework.Net.csproj", "{C4DC2AA8-5623-4948-9FFC-79BB37D2BECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUtility", "J:\workSpace\VisualStudio\MyUtility\MyUtility.csproj", "{551C2F66-CB1D-4182-9F86-E31458923AC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUtility", "MyUtility\MyUtility.csproj", "{551C2F66-CB1D-4182-9F86-E31458923AC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
