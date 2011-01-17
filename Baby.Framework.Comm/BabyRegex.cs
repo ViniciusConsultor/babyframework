@@ -2,10 +2,123 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Baby.Framework.Comm
 {
+    /// <summary>
+    /// 异步正则类
+    /// </summary>
     public class BabyRegex
+    {
+        private int _timeOut = 0;
+
+        /// <summary>
+        /// 超时时间
+        /// </summary>
+        public int TimeOut
+        {
+            get { return _timeOut; }
+            set { _timeOut = value; }
+        }
+
+        private int _sleepInterval = 100;
+
+        /// <summary>
+        /// 时间计算步长
+        /// </summary>
+        public int SleepInterval
+        {
+            get { return _sleepInterval; }
+            set { _sleepInterval = value; }
+        }
+
+        private bool _isComplete = false;
+
+        /// <summary>
+        /// 是否已完成
+        /// </summary>
+        public bool IsComplete 
+        { 
+            get { return _isComplete; } 
+            set { _isComplete = value; } 
+        }
+
+        private MatchCollection _mc = null;
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="timeOut"></param>
+        public BabyRegex(int timeOut)
+        {
+            this._timeOut = timeOut;
+        }
+        
+        /// <summary>
+        /// 使用线程进行匹配，匹配成功则直接返回
+        /// </summary>
+        /// <param name="reg">正则</param>
+        /// <param name="inputStr">需要匹配的字符串</param>
+        /// <returns>匹配结果</returns>
+        public MatchCollection Matchs(Regex reg,string inputStr)
+        {
+            Thread matchsThread = new Thread(new ThreadStart(delegate(){
+                _mc = reg.Matches(inputStr);
+                _isComplete = true;
+            }));
+            matchsThread.Start();
+            int i = 0;
+            while (_isComplete == false && matchsThread.IsAlive)
+            {
+                Thread.Sleep(SleepInterval);
+                if ((++i) * SleepInterval >= _timeOut)
+                {
+                    matchsThread.Abort();
+                    matchsThread = null;
+                    _isComplete = true;
+                }
+            }
+
+            return _mc;
+        }
+
+        /// <summary>
+        /// 使用线程进行验证是否可以匹配，超时也认为匹配失败
+        /// </summary>
+        /// <param name="reg">正则</param>
+        /// <param name="inputStr">需要匹配的字符串</param>
+        /// <returns>true 成功；false 失败</returns>
+        public bool IsMatch(Regex reg,string inputStr)
+        {
+            bool matchResult = false;
+            Thread matchThread = new Thread(new ThreadStart(delegate(){
+                matchResult = reg.IsMatch(inputStr);
+                _isComplete = true;
+            }));
+            matchThread.Start();
+
+            int i = 0;
+            while (_isComplete == false && matchThread.IsAlive)
+            {
+                Thread.Sleep(SleepInterval);
+                if ((++i) * SleepInterval >= _timeOut)
+                {
+                    matchThread.Abort();
+                    matchThread = null;
+                    _isComplete = true;
+                }
+            }
+
+            return matchResult;
+        }
+    }
+
+    /// <summary>
+    /// 正则验证工具类
+    /// </summary>
+    internal static partial class BabyRegexTool
     {
         /// <summary>
         /// 获取字符串中第一张图片的地址
