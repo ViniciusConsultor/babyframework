@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web;
-using System.Drawing;
 
 namespace Baby.Framework.Comm
 {
     public class CheckCode
     {
         /// <summary>
-        /// 生成验证码并保存Session或Cookies
-        /// 传入URL参数check_type，则生成Session["sys_check_"+url参数]
-        /// 不传入则生成Session["sys_checkcode"]
-        /// 注意生成Cookies会进行对称加密
+        /// 生成验证码
         /// </summary>
-        /// <param name="isSession">是否生成Session，否则生成Cookies</param>
         /// <param name="randomNum">生成几位验证码</param>
         /// <returns>返回随机的字符串</returns>
-        private string GetCheckCodeStr(bool isSession,int randomNum)
+        private string GetCheckCodeStr(int randomNum)
         {
             int number;
             char code;
@@ -37,28 +29,16 @@ namespace Baby.Framework.Comm
                 }
                 checkCodeStr += code.ToString();
             }
-            HttpContext.Current.Session.Timeout = 10;
-            string checkType = HttpContext.Current.Request.QueryString["check_type"] == null ? string.Empty : HttpContext.Current.Request.QueryString["check_type"].ToString();
-            string name = string.Empty;
-            name = checkType != string.Empty ? "sys_check_" + checkType : "sys_checkcode";
-            if (isSession)
-            {
-                HttpContext.Current.Session[name] = checkCodeStr.ToLower();
-            }
-            else
-            {
-                HttpCookie checkCodeCookie = new HttpCookie(name, EncryptionHelper.SymmetricDesEncode(checkCodeStr, EncryptionHelper.sDes_key));
-                HttpContext.Current.Response.Cookies.Add(checkCodeCookie);
-            }
             return checkCodeStr;
         }
 
         /// <summary>
         /// 生成验证图片，默认生成4位，Session保存
         /// </summary>
-        public void CreateCheckCodeImage()
+        public void CreateCheckCodeImage(out string checkCode, int codeNum = 4)
         {
-            this.CreateCheckCodeImage(this.GetCheckCodeStr(true, 4));
+            checkCode = GetCheckCodeStr(codeNum);
+            this.CreateCheckCodeImage(checkCode);
         }
 
         /// <summary>
