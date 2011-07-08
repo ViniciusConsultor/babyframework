@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -45,6 +46,7 @@
     <Compile Include="AccessHelper.cs" />
     <Compile Include="DbHelper.cs" />
     <Compile Include="MySqlHelper.cs" />
+    <Compile Include="OracleHelper.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
